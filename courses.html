@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            background: white;
+            color: black;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 80px;
+        }
+
+        h1 {
+            color: #2575fc;
+            font-size: 32px;
+            height: 40px;
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            padding-right: 5px;
+            min-width: 8ch; /* Prevents layout shift */
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        ul {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #ff7eb3;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #ff3c41;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="typing"></h1> <!-- Animated title -->
+
+        <h2>Financial & Investment Courses</h2>
+        <ul>
+            <li>Fundamentals of Business Finance (Fall 2020)</li>
+            <li>Basic Banking and Finance (Spring 2022)</li>
+            <li>Investment Science (Fall 2022)</li>
+            <li>Financial Innovation and Structured Products (Spring 2024)</li>
+            <li>Investment Analysis and Portfolio Management (Fall 2024)</li>
+        </ul>
+
+        <h2>Computer Science & Technology Courses</h2>
+        <ul>
+            <li>Introduction to Computing Using Java (Fall 2021)</li>
+            <li>Data Structures (Spring 2023)</li>
+            <li>Database Systems (Fall 2021)</li>
+            <li>Introduction to Computer Systems (Spring 2023)</li>
+            <li>Cyber Security (Fall 2024)</li>
+            <li>Cloud Computing Security (Spring 2023)</li>
+        </ul>
+
+        <h2>Artificial Intelligence & Data Science Courses</h2>
+        <ul>
+            <li>Advanced Learning Algorithms (Spring 2023)</li>
+            <li>Data Mining (Spring 2024)</li>
+            <li>Computer Vision (Spring 2024)</li>
+            <li>E-Commerce Data Mining (Spring 2024)</li>
+        </ul>
+
+        <h2>Mathematics & Statistics Courses</h2>
+        <ul>
+            <li>General Mathematics (Fall 2020)</li>
+            <li>Calculus for Engineers (Fall 2020)</li>
+            <li>Linear Algebra for Engineers (Spring 2021)</li>
+            <li>Multivariable Calculus for Engineers (Spring 2021)</li>
+            <li>Probability for Engineers (Fall 2021)</li>
+            <li>Statistics for Engineers (Spring 2022)</li>
+            <li>Basic Statistical Concepts and Methods II (Spring 2023)</li>
+            <li>System Simulation (Fall 2024)</li>
+        </ul>
+
+        <h2>Financial Technology & Engineering Courses</h2>
+        <ul>
+            <li>Fundamentals in Financial Engineering (Fall 2021)</li>
+            <li>Financial Technology Practicum (Spring 2022)</li>
+            <li>FinTech Regulation and Legal Policy (Spring 2022)</li>
+            <li>Financial Informatics (Fall 2024)</li>
+            <li>Final Year Project I (Fall 2024)</li>
+        </ul>
+
+        <h2>General Education & Language Courses</h2>
+        <ul>
+            <li>University Chinese I (Fall 2020)</li>
+            <li>University Chinese II (Fall 2021)</li>
+            <li>Foundation English for University Studies (Spring 2021)</li>
+            <li>English for Engineering Students I (Spring 2022)</li>
+            <li>Public Affairs: Participation and Reflection (Fall 2022)</li>
+            <li>Multiculturalism and China (Fall 2022)</li>
+            <li>Perspectives in Risk Management and Modern Society (Fall 2022)</li>
+            <li>In Dialogue with Nature (Spring 2021)</li>
+            <li>In Dialogue with Humanity (Summer 2024)</li>
+            <li>Positive Psychology in Everyday Life (Spring 2024)</li>
+            <li>Senior Seminar (Fall 2024)</li>
+        </ul>
+
+        <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+
+    <script>
+        const text = "Courses";
+        let index = 0;
+        let isDeleting = false;
+        let cursorVisible = true;
+
+        function typeEffect() {
+            const typingElement = document.getElementById("typing");
+
+            if (!isDeleting) {
+                typingElement.textContent = text.slice(0, index) + (cursorVisible ? "|" : "");
+                index++;
+                if (index > text.length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, 1000);
+                    return;
+                }
+            } else {
+                typingElement.textContent = text.slice(0, index) + (cursorVisible ? "|" : "");
+                index--;
+                if (index < 0) {
+                    isDeleting = false;
+                    setTimeout(() => {
+                        index = 0;
+                        typeEffect();
+                    }, 500);
+                    return;
+                }
+            }
+
+            setTimeout(typeEffect, isDeleting ? 100 : 150);
+        }
+
+        setInterval(() => {
+            cursorVisible = !cursorVisible;
+            const typingElement = document.getElementById("typing");
+            typingElement.textContent = text.slice(0, index) + (cursorVisible ? "|" : "");
+        }, 500);
+
+        window.onload = function () {
+            setTimeout(typeEffect, 500);
+        };
+    </script>
+
+</body>
+</html>

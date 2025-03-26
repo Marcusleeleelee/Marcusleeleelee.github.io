@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            background: white;
+            color: black;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 80px;
+        }
+
+        h1 {
+            color: #2575fc;
+            font-size: 32px;
+            height: 40px;
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            padding-right: 5px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            text-align: left;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #ff7eb3;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #ff3c41;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="typing"></h1>
+        <p>If you’d like to get in touch, feel free to reach out via email, phone, or LinkedIn.</p>
+
+        <div class="contact-info">
+            <p>📧 Email: <a href="mailto:leesiuhins@gmail.com">leesiuhins@gmail.com</a></p>
+            <p>📞 Phone: <a href="tel:+85252666646">(+852) 52666646</a></p>
+            <p>🔗 LinkedIn: <a href="https://linkedin.com/in/marcus-lee-520264238" target="_blank">linkedin.com/in/marcus-lee-520264238</a></p>
+        </div>
+
+        <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+
+    <script>
+        const text = "Contact Me";
+        let index = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const typingElement = document.getElementById("typing");
+
+            if (!isDeleting) {
+                typingElement.textContent = text.slice(0, index) + "|";
+                index++;
+                if (index > text.length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, 1000); // Pause before deleting
+                    return;
+                }
+            } else {
+                typingElement.textContent = text.slice(0, index) + "|";
+                index--;
+                if (index < 0) {
+                    isDeleting = false;
+                    setTimeout(() => {
+                        index = 0; // Reset index properly before restarting
+                        typeEffect();
+                    }, 500); // Pause before retyping
+                    return;
+                }
+            }
+
+            setTimeout(typeEffect, isDeleting ? 100 : 150); // Adjust typing & deleting speed
+        }
+
+        window.onload = function () {
+            setTimeout(typeEffect, 500); // Small delay before typing starts
+        };
+    </script>
+
+</body>
+</html>

@@ -32,14 +32,40 @@
 
       h1 {
         color: #2575fc;
+        font-size: 32px;
+        height: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
+        padding-right: 5px;
       }
 
       .project-item {
         background: #f4f4f4;
         padding: 15px;
         border-radius: 8px;
-        margin: 10px 0;
+        margin: 20px 0;
         text-align: left;
+      }
+
+      .project-item h2 {
+        color: #2575fc;
+      }
+
+      .project-item img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin: 10px 0;
+      }
+
+      .project-item a {
+        color: #2575fc;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .project-item a:hover {
+        text-decoration: underline;
       }
 
       .back-button {
@@ -61,24 +87,258 @@
   </head>
   <body>
     <div class="container">
-      <h1>Projects</h1>
+      <h1 id="typing"></h1>
 
+      <!-- Reversi Game Project -->
       <div class="project-item">
-        <h2>Project 1</h2>
-        <p>未得閒updateTT</p>
+        <h2>Reversi Game - Chrome Extension</h2>
+        <p>
+          Play the classic Reversi (Othello) game directly in your Chrome
+          browser! This lightweight and interactive extension allows you to
+          enjoy strategic gameplay anytime, anywhere.
+        </p>
+        <img
+          src="https://github.com/Marcusleeleelee/chrome-extension-reversi/raw/main/Demo.png"
+          alt="Reversi Game Demo"
+        />
+        <h3>Features:</h3>
+        <ul>
+          <li>
+            ♟️ <strong>Play Anytime</strong>: Launch the game with a single
+            click from your Chrome toolbar.
+          </li>
+          <li>
+            🎮 <strong>Classic Gameplay</strong>: Experience the timeless
+            strategy of Reversi.
+          </li>
+          <li>
+            🚀 <strong>Offline Support</strong>: No internet connection
+            required.
+          </li>
+          <li>
+            ⚡ <strong>Lightweight</strong>: Minimal impact on your browser.
+          </li>
+        </ul>
+        <h3>Tech Stack:</h3>
+        <ul>
+          <li><strong>HTML</strong>: For structuring the popup interface.</li>
+          <li><strong>CSS</strong>: For styling the board and popup design.</li>
+          <li>
+            <strong>JavaScript</strong>: For game logic and interactivity.
+          </li>
+          <li>
+            <strong>Chrome Extensions API</strong>: For creating and integrating
+            the extension into the Chrome browser.
+          </li>
+        </ul>
+        <h3>How to Install:</h3>
+        <ol>
+          <li>
+            Clone the repository:
+            <code
+              >git clone
+              https://github.com/Marcusleeleelee/chrome-extension-reversi.git</code
+            >
+          </li>
+          <li>Open Chrome and go to <code>chrome://extensions</code>.</li>
+          <li>Enable Developer Mode (top-right corner).</li>
+          <li>
+            Click <strong>Load unpacked</strong> and select the project folder.
+          </li>
+          <li>The Reversi extension will appear in your toolbar.</li>
+        </ol>
+        <p>
+          View the code on GitHub:
+          <a
+            href="https://github.com/Marcusleeleelee/chrome-extension-reversi"
+            target="_blank"
+          >
+            Reversi Game - Chrome Extension
+          </a>
+        </p>
       </div>
 
+      <!-- Task Planner Project -->
       <div class="project-item">
-        <h2>Project 2</h2>
-        <p>未得閒updateTT</p>
+        <h2>Chrome Extension - Task Planner</h2>
+        <p>
+          A simple task planner Chrome extension to manage your tasks
+          effectively. This extension helps you stay organized by allowing you
+          to add, edit, and delete tasks dynamically.
+        </p>
+        <img
+          src="https://github.com/Marcusleeleelee/chrome-extension-task-planner/raw/main/Demo.png"
+          alt="Task Planner Demo"
+        />
+        <h3>Features:</h3>
+        <ul>
+          <li>
+            📝 <strong>Add, Edit, and Delete Tasks</strong>: Easily manage your
+            task list.
+          </li>
+          <li>
+            ✅ <strong>Mark Tasks</strong>: Mark tasks as done or undone with a
+            single click.
+          </li>
+          <li>
+            ⏰ <strong>Dynamic Date and Time</strong>: Displays the current date
+            and time automatically.
+          </li>
+        </ul>
+        <h3>Tech Stack:</h3>
+        <ul>
+          <li><strong>HTML</strong>: For structuring the popup interface.</li>
+          <li><strong>CSS</strong>: For styling the task planner interface.</li>
+          <li>
+            <strong>JavaScript</strong>: For logic to manage tasks dynamically.
+          </li>
+          <li>
+            <strong>Chrome Extensions API</strong>: For integrating the
+            extension with the browser.
+          </li>
+        </ul>
+        <h3>How to Install:</h3>
+        <ol>
+          <li>
+            Clone the repository:
+            <code
+              >git clone
+              https://github.com/Marcusleeleelee/chrome-extension-task-planner.git</code
+            >
+          </li>
+          <li>Open Chrome and go to <code>chrome://extensions</code>.</li>
+          <li>Enable Developer Mode (top-right corner).</li>
+          <li>
+            Click <strong>Load unpacked</strong> and select the project folder.
+          </li>
+          <li>The Task Planner extension will appear in your toolbar.</li>
+        </ol>
+        <p>
+          View the code on GitHub:
+          <a
+            href="https://github.com/Marcusleeleelee/chrome-extension-task-planner"
+            target="_blank"
+          >
+            Task Planner - Chrome Extension
+          </a>
+        </p>
       </div>
 
+      <!-- Multi Timer Project -->
       <div class="project-item">
-        <h2>Project 3</h2>
-        <p>未得閒updateTT</p>
+        <h2>Multi Timer - Chrome Extension</h2>
+        <p>
+          Manage your time with ease using the Multi Timer Chrome Extension!
+          This lightweight and interactive tool allows you to set multiple
+          countdowns and alarms directly from your browser.
+        </p>
+        <img
+          src="https://github.com/Marcusleeleelee/chrome-extension-timer/raw/main/Demo.png"
+          alt="Multi Timer Demo"
+        />
+        <h3>Features:</h3>
+        <ul>
+          <li>
+            ⏳ <strong>Multiple Timers</strong>: Add and manage multiple
+            countdowns and alarms simultaneously.
+          </li>
+          <li>
+            🎯 <strong>Precise Control</strong>: Set timers and alarms with
+            hours, minutes, and seconds.
+          </li>
+          <li>
+            🌙 <strong>Dark Theme</strong>: Sleek black background with a modern
+            design.
+          </li>
+          <li>
+            🚀 <strong>Offline Support</strong>: Works without an internet
+            connection.
+          </li>
+          <li>
+            ⚡ <strong>Lightweight</strong>: Minimal impact on your browser's
+            performance.
+          </li>
+        </ul>
+        <h3>Tech Stack:</h3>
+        <ul>
+          <li><strong>HTML</strong>: For the user interface structure.</li>
+          <li>
+            <strong>CSS</strong>: For styling the timers and alarm interface.
+          </li>
+          <li>
+            <strong>JavaScript</strong>: For the logic to manage timers and
+            alarms.
+          </li>
+          <li>
+            <strong>Chrome Extensions API</strong>: For integrating the
+            extension with the browser.
+          </li>
+        </ul>
+        <h3>How to Install:</h3>
+        <ol>
+          <li>
+            Clone the repository:
+            <code
+              >git clone
+              https://github.com/Marcusleeleelee/chrome-extension-timer.git</code
+            >
+          </li>
+          <li>Open Chrome and go to <code>chrome://extensions</code>.</li>
+          <li>Enable Developer Mode (top-right corner).</li>
+          <li>
+            Click <strong>Load unpacked</strong> and select the project folder.
+          </li>
+          <li>The Multi Timer extension will appear in your toolbar.</li>
+        </ol>
+        <p>
+          View the code on GitHub:
+          <a
+            href="https://github.com/Marcusleeleelee/chrome-extension-timer"
+            target="_blank"
+          >
+            Multi Timer - Chrome Extension
+          </a>
+        </p>
       </div>
 
       <a href="index.html" class="back-button">Back to Home</a>
     </div>
+
+    <script>
+      const text = "Projects";
+      let index = 0;
+      let isDeleting = false;
+
+      function typeEffect() {
+        const typingElement = document.getElementById("typing");
+
+        if (!isDeleting) {
+          typingElement.textContent = text.slice(0, index) + "|";
+          index++;
+          if (index > text.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 1000); // Pause before deleting
+            return;
+          }
+        } else {
+          typingElement.textContent = text.slice(0, index) + "|";
+          index--;
+          if (index < 0) {
+            isDeleting = false;
+            setTimeout(() => {
+              index = 0; // Reset index before restarting
+              typeEffect();
+            }, 500); // Pause before retyping
+            return;
+          }
+        }
+
+        setTimeout(typeEffect, isDeleting ? 100 : 150); // Adjust typing & deleting speed
+      }
+
+      window.onload = function () {
+        setTimeout(typeEffect, 500); // Small delay before typing starts
+      };
+    </script>
   </body>
 </html>

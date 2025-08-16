@@ -160,46 +160,36 @@
       const text = "Courses";
       let index = 0;
       let isDeleting = false;
-      let cursorVisible = true;
 
       function typeEffect() {
         const typingElement = document.getElementById("typing");
 
         if (!isDeleting) {
-          typingElement.textContent =
-            text.slice(0, index) + (cursorVisible ? "|" : "");
+          typingElement.textContent = text.slice(0, index) + "|";
           index++;
           if (index > text.length) {
             isDeleting = true;
-            setTimeout(typeEffect, 1000);
+            setTimeout(typeEffect, 1000); // Pause before deleting
             return;
           }
         } else {
-          typingElement.textContent =
-            text.slice(0, index) + (cursorVisible ? "|" : "");
+          typingElement.textContent = text.slice(0, index) + "|";
           index--;
           if (index < 0) {
             isDeleting = false;
             setTimeout(() => {
-              index = 0;
+              index = 0; // Reset index properly before restarting
               typeEffect();
-            }, 500);
+            }, 500); // Pause before retyping
             return;
           }
         }
 
-        setTimeout(typeEffect, isDeleting ? 100 : 150);
+        setTimeout(typeEffect, isDeleting ? 100 : 150); // Adjust typing & deleting speed
       }
 
-      setInterval(() => {
-        cursorVisible = !cursorVisible;
-        const typingElement = document.getElementById("typing");
-        typingElement.textContent =
-          text.slice(0, index) + (cursorVisible ? "|" : "");
-      }, 500);
-
       window.onload = function () {
-        setTimeout(typeEffect, 500);
+        setTimeout(typeEffect, 500); // Small delay before typing starts
       };
     </script>
   </body>
